@@ -30,10 +30,14 @@ class Home extends React.Component {
     renderRows = () => {
         const displayableRows = this.state.rows.map((row, i) => {
             return (
-                <div className="home-row">
-                    {row.photos.map((photo, i) => (
-                        <HomePhoto size={getSize(photo.size)} key={i} src={photo.url}/>
-                    ))}
+                <div className={["home-row", i === 0 ? "first" : ""].join(" ")}>
+                    {row.photos.map((photo, j) => {
+                        const delay = Math.random() * 300   ;
+                        return (
+                            <HomePhoto delay={delay} id={photo.id} firstRow={i !== 0} size={getSize(photo.size)} key={i} src={photo.url}/>
+                        )
+                    })
+                    }
                 </div>
             )
         });
