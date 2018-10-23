@@ -5,29 +5,87 @@
     position: absolute;
     justify-content: center;
     width: 100%;
+    padding-top: 50px;
     
     .home-row {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         height: 100vh;
+        align-items: center;
+
+        &.home-row-3 {
+            .photo {
+                &.large {
+                    width: 150%;
+                    height: 150%;
+                }
+                &.medium {
+                    width: 100%;
+                    height: 100%;
+                }
+                &.small {
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+        }
+        &.home-row-2 {
+            .photo {
+                &.large {
+                    width: 60%;
+                    height: 60%;
+                }
+                &.medium {
+                    width: 50%;
+                    height: 50%;
+                }
+                &.small {
+                    width: 30%;
+                    height: 30%;
+                }
+            }
+        }
+
+        &.home-row-1 {
+            .photo {
+                &.large {
+                    width: 60%;
+                    height: 60%;
+                }
+                &.medium {
+                    width: 50%;
+                    height: 50%;
+                }
+                &.small {
+                    width: 40%;
+                    height: 40%;
+                }
+            }
+        }
+
+        .photo {
+            &.vertical {
+                width: auto!important;
+                img {
+                    width: auto;
+                }
+            }
+            &.horizontal {
+                height: auto!important;
+                img {
+                    height: auto;
+                }
+            }
+        }
         
         &.first {
             height: 75vh;
             padding-bottom: 100px;
         }
-
         .photo {
             img {
-                &.small {
-                    width: 350px;
-                }
-                &.medium {
-                    width: 450px;
-                }
-                &.large {
-                    width: 500px;
-                }
-                height: auto;
+                width: 100%;
+                height: 100%;
             }
         }
     }

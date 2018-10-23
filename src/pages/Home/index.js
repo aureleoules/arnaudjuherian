@@ -29,17 +29,19 @@ class Home extends React.Component {
 
     renderRows = () => {
         const displayableRows = this.state.rows.map((row, i) => {
-            return (
-                <div className={["home-row", i === 0 ? "first" : ""].join(" ")}>
-                    {row.photos.map((photo, j) => {
-                        const delay = Math.random() * 300   ;
-                        return (
-                            <HomePhoto delay={delay} id={photo.id} firstRow={i !== 0} size={getSize(photo.size)} key={i} src={photo.url}/>
-                        )
-                    })
-                    }
-                </div>
-            )
+            if(row.photos) {
+                return (
+                    <div className={["home-row", i === 0 ? "first" : "", "home-row-"+row.photos.length].join(" ")}>
+                        {row.photos.map((photo, j) => {
+                            const delay = Math.random() * 300   ;
+                            return (
+                                <HomePhoto mode={photo.height > photo.width ? "vertical" : "horizontal"} delay={delay} id={photo.id} firstRow={i !== 0} size={getSize(photo.size)} key={i} src={photo.url}/>
+                            )
+                        })
+                        }
+                    </div>
+                )
+            }
         });
         return displayableRows;
     }
