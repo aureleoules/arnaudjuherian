@@ -1,9 +1,52 @@
 import React from 'preact';
+import client from 'services/client';
+
+import HomePhoto from 'components/HomePhoto';
+
+import {getSize} from 'utils';
+
+import './styles.scss';
 
 class Home extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            rows: []
+        }
+    }
+
+    componentDidMount() {
+        client.get("/rows").then(response => {
+            const rows = response.data.payload;
+            this.setState({
+                rows
+            });
+        }).catch(err => {
+            if(err) throw err;
+        });
+    }
+
+    renderRows = () => {
+        const displayableRows = this.state.rows.map((row, i) => {
+            return (
+                <div className="home-row">
+                    {row.photos.map((photo, i) => (
+                        <HomePhoto size={getSize(photo.size)} key={i} src={photo.url}/>
+                    ))}
+                </div>
+            )
+        });
+        return displayableRows;
+    }
+
     render() {
         return (
-            <div>Home</div>
+            <div className="page">Home
+                <div className="rows-container">
+                    {this.renderRows()}
+                </div>
+            </div>
         )
     }
 }

@@ -6,8 +6,10 @@
     "axios": "^0.18.0",
     "node-sass": "^4.9.3",
     "preact": "^8.3.1",
+    "preact-compat": "^3.18.4",
     "preact-router": "^2.6.1",
     "react-dom": "^16.5.2",
+    "react-on-visible": "^1.5.1",
     "react-scripts": "2.0.4"
   },
   "scripts": {

@@ -1,0 +1,30 @@
+.rows-container {
+    display: flex;
+    top: 150px;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+}
+
+.home-row {
+    display: flex;
+    justify-content: space-evenly;
+    height: 80vh;
+    padding-bottom: 100px;
+
+    .photo {
+        img {
+            &.small {
+                width: 350px;
+            }
+            &.medium {
+                width: 450px;
+            }
+            &.large {
+                width: 500px;
+            }
+            height: auto;
+        }
+    }
+}
