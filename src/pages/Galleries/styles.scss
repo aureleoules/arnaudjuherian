@@ -1,0 +1,23 @@
+.galleries {
+    position: absolute;
+    top: 180px;
+
+    .galleries-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 1600px;
+
+        @media screen and (max-width: 550px) {
+            width: 95%;
+            .gallery-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+    }
+}

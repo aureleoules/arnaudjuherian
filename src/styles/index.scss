@@ -6,12 +6,36 @@ body,
     height: 100%;
     padding: 0;
     margin: 0;
-    color: #293133;
+    
+    color: #3A506B;
+    ::-webkit-scrollbar { 
+        display: none; 
+    }
 }
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../assets/fonts/BebasNeue.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dense';
+    src: url('../assets/fonts/Dense-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 body {
     >div {
         height: 100%;
         width: 100%;
     }
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
 }

@@ -1,0 +1,39 @@
+.menu {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    z-index: 2;
+    text-transform: lowercase;
+    width: 100%;
+    justify-content: center;
+    font-family: Dense;
+    font-size: 24px;
+    
+
+    a {
+        color: #0B132B;
+        line-height: 35px;
+        text-decoration: none;
+        &.active {
+            font-weight: bold;
+            opacity: 1!important;
+        }
+        transition: all 0.2s;
+        &:hover {
+            opacity: 0.68;
+        }
+        
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        margin: 0;
+        margin-top: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+            margin: 0 15px;
+        }
+    }
+}

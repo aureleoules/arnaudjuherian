@@ -16,7 +16,8 @@ class Home extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
+        console.log(this.props);
         client.get("/rows").then(response => {
             const rows = response.data.payload;
             this.setState({
@@ -33,7 +34,7 @@ class Home extends React.Component {
                 return (
                     <div className={["home-row", i === 0 ? "first" : "", "home-row-"+row.photos.length].join(" ")}>
                         {row.photos.map((photo, j) => {
-                            const delay = Math.random() * 300   ;
+                            const delay = Math.random() * 200   ;
                             return (
                                 <HomePhoto mode={photo.height > photo.width ? "vertical" : "horizontal"} delay={delay} id={photo.id} firstRow={i !== 0} size={getSize(photo.size)} key={i} src={photo.url}/>
                             )
@@ -42,13 +43,15 @@ class Home extends React.Component {
                     </div>
                 )
             }
+            return null;
         });
         return displayableRows;
     }
 
     render() {
+        console.log("render");
         return (
-            <div className="page">Home
+            <div className="page">
                 <div className="rows-container">
                     {this.renderRows()}
                 </div>

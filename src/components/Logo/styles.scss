@@ -1,11 +1,25 @@
 .logo {
-    background-image: url('../../assets/AJKiona.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 60px;
-    top: 50px;
+    font-size: 4.5em;
+    font-family: 'BebasNeue';
+    text-align: center;
     position: absolute;
+    color: #0B132B;
+    z-index: 1;
     width: 100%;
+    letter-spacing: 10px;
+    height: 180px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        padding: 0;
+        position: absolute;
+        margin: 0;
+        line-height: 42px;
+    }
+
+    @media screen and (max-width: 650px) {
+        font-size: 10vw;
+    }
 }   
