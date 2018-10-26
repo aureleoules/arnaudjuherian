@@ -28,7 +28,6 @@ class Gallery extends React.Component {
     render() {
         return (
             <div className="page gallery">
-                <h1>{this.state.gallery.title}</h1>
                 <div className="gallery-photos-container">
                     {this.state.gallery.photos.map((photo, i) => (
                         <img src={photo.url}/>
