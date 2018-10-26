@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 html,
 body,
 #root,
@@ -12,20 +13,13 @@ body,
         display: none; 
     }
 }
+
 @font-face {
-    font-family: 'BebasNeue';
-    src: url('../assets/fonts/BebasNeue.otf') format('truetype');
+    font-family: 'Unisono';
+    src: url('../assets/fonts/Unisono INK.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face {
-    font-family: 'Dense';
-    src: url('../assets/fonts/Dense-Regular.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 
 body {
     >div {
