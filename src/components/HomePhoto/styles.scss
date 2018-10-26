@@ -3,6 +3,30 @@
     display: flex;
     align-items: center;
     opacity: 0;
+    justify-content: center;
+    
+
+    &.has-gallery {
+        cursor: pointer;
+        &:hover {
+            p {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    p {
+        position: absolute;
+        font-size: 4em;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-family: Dense;
+        color: white;
+        transition: opacity 0.5s;
+        text-align: center;
+        opacity: 0;
+    }
 
     &.first-row {
         -webkit-animation: opacity 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -16,6 +40,7 @@
         transform: translateY(50px);
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }

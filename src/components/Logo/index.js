@@ -1,9 +1,10 @@
 import React from 'preact';
 import './styles.scss';
+import {Link} from 'preact-router/match';
 
 const Logo = () => (
     <div className="logo">
-        <p>Arnaud Juherian</p>
+        <Link href="/">Arnaud Juherian</Link>
     </div>
 );
 

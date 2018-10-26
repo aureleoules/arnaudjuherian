@@ -6,6 +6,7 @@ import HomePhoto from 'components/HomePhoto';
 import {getSize} from 'utils';
 
 import './styles.scss';
+import { route } from 'preact-router';
 
 class Home extends React.Component {
 
@@ -20,12 +21,19 @@ class Home extends React.Component {
         console.log(this.props);
         client.get("/rows").then(response => {
             const rows = response.data.payload;
+            console.log("componentWillMount()");
             this.setState({
                 rows
             });
         }).catch(err => {
             if(err) throw err;
         });
+    }
+
+    onPhotoClick = photo => {
+        if(photo.linked_gallery_id) {
+            route('/gallery/' + photo.linked_gallery.title);
+        }
     }
 
     renderRows = () => {
@@ -36,7 +44,18 @@ class Home extends React.Component {
                         {row.photos.map((photo, j) => {
                             const delay = Math.random() * 200   ;
                             return (
-                                <HomePhoto mode={photo.height > photo.width ? "vertical" : "horizontal"} delay={delay} id={photo.id} firstRow={i !== 0} size={getSize(photo.size)} key={i} src={photo.url}/>
+                                <HomePhoto
+                                    onClick={() => this.onPhotoClick(photo)}
+                                    hasGallery={!!photo.linked_gallery_id}
+                                    linkedGallery={photo.linked_gallery}
+                                    mode={photo.height > photo.width ? "vertical" : "horizontal"} 
+                                    delay={delay} 
+                                    id={photo.id} 
+                                    firstRow={i !== 0} 
+                                    size={getSize(photo.size)} 
+                                    key={i} 
+                                    src={photo.url}
+                                />
                             )
                         })
                         }

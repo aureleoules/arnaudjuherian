@@ -1,11 +1,10 @@
 .rows-container {
     display: flex;
-    top: 150px;
+    top: 100px;
     flex-direction: column;
     position: absolute;
     justify-content: center;
     width: 100%;
-    padding-top: 50px;
 
 
     .home-row {
@@ -60,13 +59,13 @@
                 }
 
                 &.medium {
-                    width: 50%;
-                    height: 50%;
+                    width: 60%;
+                    height: 60%;
                 }
 
                 &.small {
-                    width: 40%;
-                    height: 40%;
+                    width: 50%;
+                    height: 50%;
                 }
             }
         }
@@ -104,7 +103,7 @@
     }
 
     @media screen and (max-width: 1000px) {
-        max-width: 80%;
+        max-width: 95%;
         margin: 0 auto;
         position: relative;
 

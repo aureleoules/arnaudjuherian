@@ -8,21 +8,24 @@ import Home from 'pages/Home';
 import Galleries from 'pages/Galleries';
 import Contact from 'pages/Contact';
 import About from 'pages/About';
-
+import Gallery from 'pages/Gallery';
 
 import Logo from 'components/Logo';
 
 class App extends React.Component {
+	
+	/* Reset scroll */
+	onRouteChange = () => window.scrollTo(0, 0);
+
 	render() {
 		return (
 			<div>
-				<Logo/>
 				<Menu/>
 				<div className="app">
-					<Router>
+					<Router onChange={this.onRouteChange}>
 						<Home path="/"/>
 						<Galleries path="/galleries"/>
-
+						<Gallery path="/gallery/:title"/>
 						<Contact path="/contact"/>
 						<About path="/about" />
 					</Router>

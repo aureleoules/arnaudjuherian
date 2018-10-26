@@ -1,22 +1,15 @@
 .logo {
-    font-size: 4.5em;
-    font-family: 'BebasNeue';
+    font-size: 46px;
+    font-family: 'Unisono Ink';
     text-align: center;
-    position: absolute;
     color: #0B132B;
     z-index: 1;
-    width: 100%;
-    letter-spacing: 10px;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    p {
+    a {
         padding: 0;
-        position: absolute;
         margin: 0;
-        line-height: 42px;
+        line-height: 50px;
+        opacity: 1!important;
     }
 
     @media screen and (max-width: 650px) {

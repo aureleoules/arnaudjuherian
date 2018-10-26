@@ -5,6 +5,7 @@ import client from 'services/client';
 import Gallery from 'components/Gallery';
 
 import './styles.scss';
+import { route } from 'preact-router';
 
 class Galleries extends React.Component {
 
@@ -30,7 +31,7 @@ class Galleries extends React.Component {
             <div className="page galleries">
                 <div className="galleries-container">
                     {this.state.galleries.map((gallery, i) => (
-                        <Gallery preview={gallery.preview_image} title={gallery.title}/>
+                        <Gallery onClick={() => route('/gallery/' + gallery.title)} preview={gallery.preview_image} title={gallery.title}/>
                     ))}
                 </div>
             </div>
