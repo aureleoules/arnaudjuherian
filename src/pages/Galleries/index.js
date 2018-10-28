@@ -14,13 +14,16 @@ class Galleries extends React.Component {
         this.state = {
             galleries: []
         }
+        this.currentDelay = 0;
     }
 
-    componentWillMount() {
-        client.get('/galleries').then(response => {
+    componentWillMount() {        
+        client().then(async (api) => {
+            const response = await api.get('/galleries');
             const galleries = response.data.payload;
-            this.setState({galleries});
-            console.log(galleries);
+            this.setState({
+                galleries
+            });
         }).catch(err => {
             if(err) throw err;
         });
@@ -30,9 +33,15 @@ class Galleries extends React.Component {
         return (
             <div className="page galleries">
                 <div className="galleries-container">
-                    {this.state.galleries.map((gallery, i) => (
-                        <Gallery onClick={() => route('/gallery/' + gallery.title)} preview={gallery.preview_image} title={gallery.title}/>
-                    ))}
+                    {this.state.galleries.map((gallery, i) => {
+                        if(i !== 0) {
+                            this.currentDelay += 100;
+                        }
+                        return (
+                            <Gallery id={i} delay={this.currentDelay} onClick={() => route('/gallery/' + gallery.title)} preview={gallery.preview_image} title={gallery.title}/>
+                        )
+                    }
+                    )}
                 </div>
             </div>
         )

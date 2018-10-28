@@ -1,20 +1,37 @@
-import axios from 'axios';
-import { setupCache } from 'axios-cache-adapter'
+import localforage from 'localforage'
+import memoryDriver from 'localforage-memoryStorageDriver'
+import {
+    setup
+} from 'axios-cache-adapter'
 
-// Create `axios-cache-adapter` instance
-const cache = setupCache({
-    maxAge: 15 * 60 * 1000 //15mins
-});
+// `async` wrapper to configure `localforage` and instantiate `axios` with `axios-cache-adapter`
+async function configure() {
+    // Register the custom `memoryDriver` to `localforage`
+    await localforage.defineDriver(memoryDriver)
 
-const httpClient = axios.create({
-    baseURL: process.env.NODE_ENV === "development" ? process.env.REACT_APP_DEV_ENDPOINT: process.env.REACT_APP_PROD_ENDPOINT,
-    adapter: cache.adapter
-});
+    // Create `localforage` instance
+    const store = localforage.createInstance({
+        // List of drivers used
+        driver: [
+            localforage.INDEXEDDB,
+            localforage.LOCALSTORAGE,
+            memoryDriver._driver
+        ],
+        // Prefix all storage keys to prevent conflicts
+        name: 'arnaudcache'
+    })
 
-httpClient.interceptors.response.use((response) => {
-    return response;
-}, function (error) {
-    return Promise.reject(error.response);
-});
+    // Create `axios` instance with pre-configured `axios-cache-adapter` using a `localforage` store
+    return setup({
+        // `axios` options
+        baseURL: process.env.NODE_ENV === "development" ? process.env.REACT_APP_DEV_ENDPOINT : process.env.REACT_APP_PROD_ENDPOINT,
 
-export default httpClient;
+        // `axios-cache-adapter` options
+        cache: {
+            maxAge: 15 * 60 * 1000, //15mins
+            store // Pass `localforage` store to `axios-cache-adapter`
+        },
+    })
+}
+
+export default configure;

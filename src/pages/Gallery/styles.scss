@@ -10,6 +10,7 @@
         flex-wrap: wrap;
         width: 500px;
         margin: 0 auto;
+        animation: opacity 750ms ease-out;
 
         @media screen and(max-width: 1000px) {
             width: 90%;
@@ -20,5 +21,6 @@
             height: auto;
             margin-top: 15px;
         }
+
     }
 }

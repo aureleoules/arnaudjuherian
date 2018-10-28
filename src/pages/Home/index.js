@@ -18,10 +18,9 @@ class Home extends React.Component {
     }
 
     componentWillMount() {
-        console.log(this.props);
-        client.get("/rows").then(response => {
+        client().then(async (api) => {
+            const response = await api.get('/rows');
             const rows = response.data.payload;
-            console.log("componentWillMount()");
             this.setState({
                 rows
             });
@@ -42,7 +41,7 @@ class Home extends React.Component {
                 return (
                     <div className={["home-row", i === 0 ? "first" : "", "home-row-"+row.photos.length].join(" ")}>
                         {row.photos.map((photo, j) => {
-                            const delay = Math.random() * 200   ;
+                            const delay = Math.random() * 200;
                             return (
                                 <HomePhoto
                                     onClick={() => this.onPhotoClick(photo)}

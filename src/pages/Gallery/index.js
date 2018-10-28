@@ -16,10 +16,12 @@ class Gallery extends React.Component {
     }
 
     componentWillMount() {
-        client.get('/galleries/title/' + this.props.title).then(response => {
+        client().then(async (api) => {
+            const response = await api.get('/galleries/title/' + this.props.title);
             const gallery = response.data.payload;
-            console.log(gallery);
-            this.setState({gallery});
+            this.setState({
+                gallery
+            });
         }).catch(err => {
             if(err) throw err;
         });
