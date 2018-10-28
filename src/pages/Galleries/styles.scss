@@ -1,6 +1,9 @@
 .galleries {
     position: absolute;
-    top: 100px;
+    top: 50px;
+    left: 55px;
+    height: auto!important;
+    padding-top: 0!important;
 
     .galleries-container {
         display: flex;

@@ -7,6 +7,22 @@
     top: 35px;
     font-weight: 300;
 
+    .hamburger {
+        position: absolute;
+        z-index: 10;
+        left: 5px;
+        padding: 0;
+        user-select: none;
+        margin-top: 2px;
+        @media screen and (min-width: 1001px) {
+            display: none;
+        }
+    }
+
+    .hamburger:focus {
+        outline: none!important;
+    }
+
     a {
         color: #0B132B;
         line-height: 35px;
@@ -29,6 +45,64 @@
         // text-transform: lowercase;
         li {
             margin: 0;
+        }
+    }
+    
+    a.full-text {
+        display: none;
+    }
+    a.wrapped-text {
+        display: block;
+    }
+
+    @media screen and (max-width: 1000px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 82%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            display: none;
+            a {
+                opacity: 0;
+                transition: opacity 0.2s ease-in;
+            }
+        }
+
+        ul.active {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            left: 0;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            font-size: 2em;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            a {
+                opacity: 1;
+            }
+
+        }
+        .logo {
+            text-align: center;
+
+            a.full-text {
+                display: block
+            }
+            a.wrapped-text {
+                display: none;
+            }
         }
     }
 }

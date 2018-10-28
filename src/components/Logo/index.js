@@ -4,7 +4,8 @@ import {Link} from 'preact-router/match';
 
 const Logo = () => (
     <div className="logo">
-        <Link href="/">Arnaud<br/>Juherian</Link>
+        <Link href="/" className="full-text">Arnaud Juherian</Link>
+        <Link href="/" className="wrapped-text">Arnaud<br/>Juherian</Link>
     </div>
 );
 

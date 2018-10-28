@@ -8,11 +8,26 @@ import Logo from 'components/Logo';
 import strings from 'strings';
 
 class Menu extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false
+        }
+    }
+
+    toggleMenu = () => this.setState({active: !this.state.active});
+
     render() {
         return (
             <div className="menu">
                 <Logo/>
-                <ul>
+                <button onClick={this.toggleMenu} className={["hamburger", "hamburger--collapse", this.state.active ? "is-active": ""].join(" ")} type="button">
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                    </span>
+                </button>  
+                <ul className={this.state.active ? "active" : ""}>
                     <li>
                         <Link activeClassName="active" href="/">{strings.MENU_HOME}</Link>
                     </li>
