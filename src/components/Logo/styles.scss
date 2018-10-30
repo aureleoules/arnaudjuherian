@@ -2,8 +2,11 @@
     font-size: 46px;
     font-family: 'Unisono';
     text-align: left;
-    color: #0B132B;
+    color: black;
     z-index: 1;
+    @media screen and (max-width: 1000px) {
+        font-size: 10vw;
+    }
 
     a {
         padding: 0;

@@ -12,36 +12,49 @@ class Menu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            active: false,
+            openHamburger: false
         }
     }
 
-    toggleMenu = () => this.setState({active: !this.state.active});
+    toggleMenu = () => {
+        if(this.state.active) {
+            this.setState({openHamburger: !this.state.openHamburger})
+            const menu = document.getElementById("menu");
+            menu.classList.add("fade-out");
+            setTimeout(() => {
+                this.setState({active: !this.state.active})
+                menu.classList.remove("fade-out");
+            }, 350);
+        } else {
+            this.setState({active: !this.state.active, openHamburger: !this.state.openHamburger})
+        }
+    };
 
     render() {
         return (
             <div className="menu">
                 <Logo/>
-                <button onClick={this.toggleMenu} className={["hamburger", "hamburger--collapse", this.state.active ? "is-active": ""].join(" ")} type="button">
+                <button onClick={this.toggleMenu} className={["hamburger", "hamburger--collapse", this.state.openHamburger ? "is-active": ""].join(" ")} type="button">
                     <span className="hamburger-box">
                         <span className="hamburger-inner"></span>
                     </span>
                 </button>  
-                <ul className={this.state.active ? "active" : ""}>
+                <ul id="menu" className={this.state.active ? "active" : ""}>
                     <li>
-                        <Link activeClassName="active" href="/">{strings.MENU_HOME}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/">{strings.MENU_HOME}</Link>
                     </li>
                     <li>
-                        <Link activeClassName="active" href="/galleries">{strings.MENU_GALLERIES}</Link>
+                        <Link onClick={this.toggleMenu}  activeClassName="active" href="/galleries">{strings.MENU_GALLERIES}</Link>
                     </li>
                     <li>
-                        <Link activeClassName="active" href="/publicataions">{strings.MENU_PUBLICATIONS}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/publications">{strings.MENU_PUBLICATIONS}</Link>
                     </li>
                     <li>
-                        <Link activeClassName="active" href="/contact">{strings.MENU_CONTACT}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/contact">{strings.MENU_CONTACT}</Link>
                     </li>
                     <li>
-                        <Link activeClassName="active" href="/about">{strings.MENU_ABOUT}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/about">{strings.MENU_ABOUT}</Link>
                     </li>
                 </ul>
             </div>

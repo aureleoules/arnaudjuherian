@@ -32,7 +32,7 @@ class Gallery extends React.Component {
             <div className="page gallery">
                 <div className="gallery-photos-container">
                     {this.state.gallery.photos.map((photo, i) => (
-                        <img src={photo.url}/>
+                        <img alt={"Galerie"} src={photo.url}/>
                     ))}    
                 </div>
             </div>

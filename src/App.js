@@ -9,8 +9,7 @@ import Galleries from 'pages/Galleries';
 import Contact from 'pages/Contact';
 import About from 'pages/About';
 import Gallery from 'pages/Gallery';
-
-import Logo from 'components/Logo';
+import Publications from 'pages/Publications';
 
 class App extends React.Component {
 	
@@ -24,8 +23,12 @@ class App extends React.Component {
 				<div className="app">
 					<Router onChange={this.onRouteChange}>
 						<Home path="/"/>
+
 						<Galleries path="/galleries"/>
 						<Gallery path="/gallery/:title"/>
+						
+						<Publications path="/publications"/>
+						
 						<Contact path="/contact"/>
 						<About path="/about" />
 					</Router>
