@@ -13,7 +13,7 @@ const strings = {
     "en": {
         "MENU_HOME": "Home",
         "MENU_GALLERIES": "Galleries",
-        "MENU_PUBLICATIONS": "Publications",
+        "MENU_PUBLICATIONS": "Work",
         "MENU_CONTACT": "Contact",
         "MENU_ABOUT": "About",
 

@@ -27,7 +27,7 @@ async function configure() {
         baseURL: process.env.NODE_ENV === "development" ? process.env.REACT_APP_DEV_ENDPOINT : process.env.REACT_APP_PROD_ENDPOINT,
 
         // `axios-cache-adapter` options
-        cache: {
+        cache: process.env.NODE_ENV === "development" ? null : {
             maxAge: 15 * 60 * 1000, //15mins
             store // Pass `localforage` store to `axios-cache-adapter`
         },

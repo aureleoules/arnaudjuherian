@@ -42,19 +42,16 @@ class Menu extends React.Component {
                 </button>  
                 <ul id="menu" className={this.state.active ? "active" : ""}>
                     <li>
-                        <Link onClick={this.toggleMenu} activeClassName="active" href="/">{strings.MENU_HOME}</Link>
-                    </li>
-                    <li>
                         <Link onClick={this.toggleMenu}  activeClassName="active" href="/galleries">{strings.MENU_GALLERIES}</Link>
                     </li>
                     <li>
                         <Link onClick={this.toggleMenu} activeClassName="active" href="/publications">{strings.MENU_PUBLICATIONS}</Link>
                     </li>
                     <li>
-                        <Link onClick={this.toggleMenu} activeClassName="active" href="/contact">{strings.MENU_CONTACT}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/about">{strings.MENU_ABOUT}</Link>
                     </li>
                     <li>
-                        <Link onClick={this.toggleMenu} activeClassName="active" href="/about">{strings.MENU_ABOUT}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/contact">{strings.MENU_CONTACT}</Link>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,25 @@
+.page.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    
+    a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .icons {
+        margin-top: 15px;
+        a {
+            margin: 8px;
+            display: inline-block;
+            img {
+                width: 38px;
+            }
+        }
+    }
+}
