@@ -45,7 +45,7 @@ class Menu extends React.Component {
                         <Link onClick={this.toggleMenu}  activeClassName="active" href="/galleries">{strings.MENU_GALLERIES}</Link>
                     </li>
                     <li>
-                        <Link onClick={this.toggleMenu} activeClassName="active" href="/publications">{strings.MENU_PUBLICATIONS}</Link>
+                        <Link onClick={this.toggleMenu} activeClassName="active" href="/work">{strings.MENU_PUBLICATIONS}</Link>
                     </li>
                     <li>
                         <Link onClick={this.toggleMenu} activeClassName="active" href="/about">{strings.MENU_ABOUT}</Link>

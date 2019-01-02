@@ -9,7 +9,7 @@ import Galleries from 'pages/Galleries';
 import Contact from 'pages/Contact';
 import About from 'pages/About';
 import Gallery from 'pages/Gallery';
-import Publications from 'pages/Publications';
+import Work from 'pages/Work';
 
 class App extends React.Component {
 	
@@ -27,7 +27,7 @@ class App extends React.Component {
 						<Galleries path="/galleries"/>
 						<Gallery path="/gallery/:title"/>
 						
-						<Publications path="/publications"/>
+						<Work exact path="/work"/>
 						
 						<Contact path="/contact"/>
 						<About path="/about" />

@@ -29,7 +29,7 @@ class About extends React.Component {
         return (
             <div className="page about">
                 {this.state.fetched && <div className="about-container fade-in">
-                    <img src={this.state.image_url}/>
+                    <img alt="about" src={this.state.image_url}/>
                     <p>{getLanguage() === "en" ? this.state.content_en : this.state.content_fr}</p>
                 </div>}
             </div>

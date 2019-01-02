@@ -1,0 +1,31 @@
+.page.work {
+    top: 35px;
+    position: absolute;
+    
+    @media screen and (max-width: 1000px) {
+        top: 80px;
+    }
+    
+    .work-photos-container {
+        display: flex;
+        padding-bottom: 15px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 500px;
+        margin: 0 auto;
+        animation: opacity 750ms ease-out;
+
+        @media screen and(max-width: 1000px) {
+            width: 90%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-top: 15px;
+        }
+
+    }
+}
