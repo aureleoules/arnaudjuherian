@@ -4,6 +4,9 @@
     left: 55px;
     height: auto!important;
     padding-top: 0!important;
+    width: 90%!important;
+    margin-left: auto!important;
+    right: 0;
 
     @media screen and(max-width: 1001px) {
         // position: relative;
@@ -16,7 +19,7 @@
 
     .galleries-container {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
