@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Muli');
 
 @import "animations";
 
@@ -29,15 +29,9 @@ body,
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Tisa';
-    src: url('../assets/fonts/tisa.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 body {
-    font-family: 'Tisa';
+    font-family: 'Muli';
     >div {
         height: 100%;
         width: 100%;

@@ -9,11 +9,14 @@
         // position: relative;
         left: 0;
         top: 80px;
+        .galleries-container {
+            justify-content: center!important;
+        }
     }
 
     .galleries-container {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
