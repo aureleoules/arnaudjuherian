@@ -3,6 +3,7 @@ import React from 'react';
 import './styles.scss';
 
 import client from 'services/client';
+import strings from 'strings';
 
 class Gallery extends React.Component {
 
@@ -13,6 +14,8 @@ class Gallery extends React.Component {
                 photos: []
             }
         }
+
+        document.title = "Arnaud Juherian - " + this.props.title;
     }
 
     componentWillMount() {

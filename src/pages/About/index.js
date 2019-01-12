@@ -5,6 +5,8 @@ import client from 'services/client';
 
 import {getLanguage} from 'utils';
 
+import strings from 'strings';
+
 class About extends React.Component {
 
     constructor(props) {
@@ -12,6 +14,7 @@ class About extends React.Component {
         this.state = {
             feched: false
         }
+        document.title = "Arnaud Juherian - " + strings.MENU_ABOUT;
     }
 
     componentWillMount() {

@@ -6,6 +6,7 @@ import Gallery from 'components/Gallery';
 
 import './styles.scss';
 import { route } from 'preact-router';
+import strings from 'strings';
 
 class Galleries extends React.Component {
 
@@ -15,6 +16,8 @@ class Galleries extends React.Component {
             galleries: []
         }
         this.currentDelay = 0;
+
+        document.title = "Arnaud Juherian - " + strings.MENU_GALLERIES;
     }
 
     componentWillMount() {        

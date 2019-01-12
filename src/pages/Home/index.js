@@ -7,6 +7,7 @@ import {getSize} from 'utils';
 
 import './styles.scss';
 import { route } from 'preact-router';
+import strings from 'strings';
 
 class Home extends React.Component {
 
@@ -15,6 +16,8 @@ class Home extends React.Component {
         this.state = {
             rows: []
         }
+
+        document.title = "Arnaud Juherian";
     }
 
     componentWillMount() {

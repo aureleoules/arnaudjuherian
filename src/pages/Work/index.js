@@ -4,6 +4,8 @@ import './styles.scss';
 
 import client from 'services/client';
 
+import strings from 'strings';
+
 class Work extends React.Component {
 
     constructor(props) {
@@ -11,6 +13,8 @@ class Work extends React.Component {
         this.state = {
             photos: []
         }
+
+        document.title = "Arnaud Juherian - " + strings.MENU_PUBLICATIONS;
     }
 
     componentWillMount() {

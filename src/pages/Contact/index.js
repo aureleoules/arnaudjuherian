@@ -7,6 +7,7 @@ import client from 'services/client';
 import Facebook from 'assets/icons/facebook.svg';
 import Instagram from 'assets/icons/instagram.svg';
 import Tumblr from 'assets/icons/tumblr.svg';
+import strings from 'strings';
 
 class Contact extends React.Component {
 
@@ -15,6 +16,7 @@ class Contact extends React.Component {
         this.state = {
             fetched: false
         }
+        document.title = "Arnaud Juherian - " + strings.MENU_CONTACT;
     }
 
     componentDidMount() {
