@@ -28,7 +28,7 @@ async function configure() {
 
         // `axios-cache-adapter` options
         cache: process.env.NODE_ENV === "development" ? null : {
-            maxAge: 15 * 60 * 1000, //15mins
+            maxAge: 5 * 60 * 1000, //5mins
             store // Pass `localforage` store to `axios-cache-adapter`
         },
     })
