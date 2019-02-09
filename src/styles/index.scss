@@ -26,6 +26,12 @@ body,
     }
 }
 
+.page {
+    @media screen and (min-width: 1000px) {
+        width: calc(100% - 200px)!important;
+    }
+}
+
 @font-face {
     font-family: 'Unisono';
     src: url('../assets/fonts/Unisono INK.otf') format('truetype');
