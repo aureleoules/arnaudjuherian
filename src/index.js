@@ -11,6 +11,8 @@ if(process.env.NODE_ENV !== "development") {
     console.log = () => {};
 }
 
+console.info("Website Designer", "https://aurele.oules.com");
+
 function KeyPress(e) {
     if (e.keyCode == 223 && e.ctrlKey) {
         const lang = getLanguage();

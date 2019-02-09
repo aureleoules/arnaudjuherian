@@ -34,7 +34,7 @@ class Work extends React.Component {
             <div className="page work">
                 <div className="work-photos-container">
                     {this.state.photos.map((photo, i) => (
-                        <img onDragStart={e => e.preventDefault()} onContextMenu={e => e.preventDefault()} alt={"work"} src={photo.url}/>
+                        <img alt={"Arnaud Juherian"} src={photo.url}/>
                     ))}    
                 </div>
             </div>

@@ -35,7 +35,7 @@ class Gallery extends React.Component {
             <div className="page gallery">
                 <div className="gallery-photos-container">
                     {this.state.gallery.photos.map((photo, i) => (
-                        <img onDragStart={e => e.preventDefault()} onContextMenu={e => e.preventDefault()} alt={"Galerie"} src={photo.url}/>
+                        <img alt={"Arnaud Juherian"} src={photo.url}/>
                     ))}    
                 </div>
             </div>
