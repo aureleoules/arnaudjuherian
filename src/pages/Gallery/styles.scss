@@ -1,6 +1,7 @@
 .page.gallery {
     top: 35px;
     position: absolute;
+    width: calc(100% - 200px);
     
     @media screen and (max-width: 1000px) {
         top: 80px;

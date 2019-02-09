@@ -22,13 +22,7 @@ body,
 
 .app {
     @media screen and (min-width: 1000px) {
-        margin-left: 200px;
-    }
-}
-
-.page {
-    @media screen and (min-width: 1000px) {
-        width: calc(100% - 200px)!important;
+        padding-left: 200px;
     }
 }
 
