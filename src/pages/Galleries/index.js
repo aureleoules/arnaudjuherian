@@ -35,16 +35,18 @@ class Galleries extends React.Component {
     render() {
         return (
             <div className="page galleries">
-                <div className="galleries-container">
-                    {this.state.galleries.map((gallery, i) => {
-                        if(i !== 0) {
-                            this.currentDelay += 100;
+                <div className="g-div">
+                    <div className="galleries-container">
+                        {this.state.galleries.map((gallery, i) => {
+                            if(i !== 0) {
+                                this.currentDelay += 100;
+                            }
+                            return (
+                                <Gallery id={i} delay={this.currentDelay} onClick={() => route('/gallery/' + gallery.title)} preview={gallery.preview_image} title={gallery.title}/>
+                            )
                         }
-                        return (
-                            <Gallery id={i} delay={this.currentDelay} onClick={() => route('/gallery/' + gallery.title)} preview={gallery.preview_image} title={gallery.title}/>
-                        )
-                    }
-                    )}
+                        )}
+                    </div>
                 </div>
             </div>
         )
