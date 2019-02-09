@@ -28,12 +28,21 @@
             flex-direction: row;
             align-items: center;
             flex-wrap: wrap;
-            width: calc(100% - 200px);
             margin-left: auto;
             animation: opacity 1s slide-in;
-    
+            
+            
+            width: calc(100% - 200px);
+
+            @media screen and (max-width: 1000px) {
+                margin-top: 15px;
+                width: 100%;
+                flex-direction: column;
+                margin-left: unset;
+            }
+
             @media screen and (max-width: 550px) {
-                width: 95%;
+                width: 95%!important;
                 .gallery {
                     width: 100%;
                 }
