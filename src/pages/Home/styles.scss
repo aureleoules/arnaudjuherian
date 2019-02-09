@@ -17,8 +17,56 @@
             margin-bottom: 50px;
         }
 
+        
+        &.home-row-3 {
+            justify-content: space-evenly;
+            .photo {
+                width: 33%;
+                &.small {
+                    img {
+                        transform: scale(0.5)!important;
+                    }
+                }            
+    
+                &.medium {
+                    img {
+                        transform: scale(1)!important;
+                    }
+                }
+    
+                &.large {
+                    img {
+                        transform: scale(0.8)!important;
+                    }
+                }
+            }
+
+
+            img {
+                transform: scale(0.5)!important;
+            }
+        }
+
         .photo {
             height: 100%;
+
+            &.small {
+                img {
+                    transform: scale(0.75);
+                }
+            }            
+
+            &.medium {
+                img {
+                    transform: scale(1);
+                }
+            }
+
+            &.large {
+                img {
+                    transform: scale(1.1);
+                }
+            }
 
             img {
                 height: 100%;

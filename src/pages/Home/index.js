@@ -43,7 +43,7 @@ class Home extends React.Component {
             if(row.photos) {
                 return (
                     <div className={["home-row", i === 0 ? "first" : "", "home-row-"+row.photos.length].join(" ")}>
-                        {row.photos.map((photo, j) => {
+                        {row.photos.sort(function(a, b){return a.index - b.index}).reverse().map((photo, j) => {
                             const delay = Math.random() * 200;
                             return (
                                 <HomePhoto
