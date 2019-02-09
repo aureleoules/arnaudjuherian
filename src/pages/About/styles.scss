@@ -12,13 +12,18 @@
         margin-top: 35px;   
     
         img {
-            width: 500px;
+            width: 400px;
+            margin-bottom: 30px;
         }
 
         p {
             text-align: justify;
             white-space: pre-line;
-            width: 500px;
+            width: 400px;
+            margin-top: 0;
+            padding: 0;
+
+            text-align-last: left;
         }
 
         @media screen and(max-width: 1000px) {

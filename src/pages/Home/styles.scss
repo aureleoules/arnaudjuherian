@@ -11,6 +11,7 @@
         justify-content: center;
         height: 80vh;
         align-items: center;
+        padding-bottom: 50px;
 
         &.home-row-3 {
             .photo {
@@ -35,7 +36,7 @@
             .photo {
                 &.large {
                     width: 60%;
-                    height: 60%;
+                    height: 80%;
                 }
 
                 &.medium {
@@ -54,7 +55,7 @@
             .photo {
                 &.large {
                     width: 75%;
-                    height: 75%;
+                    height: 100%;
                 }
 
                 &.medium {

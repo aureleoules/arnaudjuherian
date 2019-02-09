@@ -20,6 +20,12 @@ body,
     color: black;
 }
 
+.app {
+    @media screen and (min-width: 1000px) {
+        margin-left: 200px;
+    }
+}
+
 @font-face {
     font-family: 'Unisono';
     src: url('../assets/fonts/Unisono INK.otf') format('truetype');
