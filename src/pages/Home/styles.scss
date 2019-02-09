@@ -12,7 +12,10 @@
         height: 95vh;
         align-items: center;
         position: relative;
-
+ 
+        @media screen and (min-width: 1500px) {
+            margin-bottom: 50px;
+        }
 
         .photo {
             height: 100%;
