@@ -3,7 +3,6 @@ import React from 'react';
 import './styles.scss';
 
 import client from 'services/client';
-import strings from 'strings';
 
 class Gallery extends React.Component {
 

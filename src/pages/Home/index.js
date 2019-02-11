@@ -7,7 +7,6 @@ import {getSize} from 'utils';
 
 import './styles.scss';
 import { route } from 'preact-router';
-import strings from 'strings';
 
 class Home extends React.Component {
 
