@@ -5,6 +5,7 @@ import './styles.scss';
 import client from 'services/client';
 
 import strings from 'strings';
+import { optimizePhoto } from '../../utils/photo';
 
 class Work extends React.Component {
 
@@ -34,7 +35,7 @@ class Work extends React.Component {
             <div className="page work">
                 <div className="work-photos-container">
                     {this.state.photos.map((photo, i) => (
-                        <img alt={"Arnaud Juherian"} src={photo.url}/>
+                        <img alt={"Arnaud Juherian"} src={optimizePhoto(photo.url)}/>
                     ))}    
                 </div>
             </div>

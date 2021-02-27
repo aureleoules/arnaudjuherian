@@ -3,6 +3,7 @@ import React from 'react';
 import './styles.scss';
 
 import client from 'services/client';
+import { optimizePhoto } from '../../utils/photo';
 
 class Gallery extends React.Component {
 
@@ -34,7 +35,7 @@ class Gallery extends React.Component {
             <div className="page gallery">
                 <div className="gallery-photos-container">
                     {this.state.gallery.photos.map((photo, i) => (
-                        <img alt={"Arnaud Juherian"} src={photo.url}/>
+                        <img alt={"Arnaud Juherian"} src={optimizePhoto(photo.url)}/>
                     ))}    
                 </div>
             </div>

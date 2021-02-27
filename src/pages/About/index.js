@@ -6,6 +6,7 @@ import client from 'services/client';
 import {getLanguage} from 'utils';
 
 import strings from 'strings';
+import { optimizePhoto } from '../../utils/photo';
 
 class About extends React.Component {
 
@@ -32,7 +33,7 @@ class About extends React.Component {
         return (
             <div className="page about">
                 {this.state.fetched && <div className="about-container fade-in">
-                    <img alt="Arnaud Juherian" src={this.state.image_url}/>
+                    <img alt="Arnaud Juherian" src={optimizePhoto(this.state.image_url)}/>
                     {(getLanguage() === "en" ? this.state.content_en : this.state.content_fr).split('\n').map((block, i) => {
                     return (
                         <p key={i}>{block}</p>
